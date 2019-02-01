@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@android:color/holo_orange_light"
+                android:text="Numbers"
+                android:textAllCaps="false"
+                android:id="@+id/numbersButton"
+                android:onClick="numbersButtonClick"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@android:color/holo_green_light"
+                android:text="Family Members"
+                android:textAllCaps="false"
+                android:id="@+id/familyButton"
+                android:onClick="familyButtonClick"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@android:color/holo_purple"
+                android:text="Colors"
+                android:textAllCaps="false"
+                android:id="@+id/colorsButton"
+                android:onClick="colorsButtonClick"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@android:color/holo_blue_bright"
+                android:text="Phrases"
+                android:textAllCaps="false"
+                android:id="@+id/phrasesButton"
+                android:onClick="phrasesButtonClick"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
