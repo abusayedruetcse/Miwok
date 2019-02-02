@@ -19,16 +19,16 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_numbers);
 
         ArrayList<Word> word=new ArrayList<Word>();
-        word.add(new Word("Ekk","one"));
-        word.add(new Word("Dui","two"));
-        word.add(new Word("Tin","three"));
-        word.add(new Word("Char","four"));
-        word.add(new Word("Panch","five"));
-        word.add(new Word("Choi","six"));
-        word.add(new Word("Sat","seven"));
-        word.add(new Word("Aut","eight"));
-        word.add(new Word("Noy","nine"));
-        word.add(new Word("Dos","ten"));
+        word.add(new Word("Ekk","one",R.drawable.number_one));
+        word.add(new Word("Dui","two",R.drawable.number_two));
+        word.add(new Word("Tin","three",R.drawable.number_three));
+        word.add(new Word("Char","four",R.drawable.number_four));
+        word.add(new Word("Panch","five",R.drawable.number_five));
+        word.add(new Word("Choi","six",R.drawable.number_six));
+        word.add(new Word("Sat","seven",R.drawable.number_seven));
+        word.add(new Word("Aut","eight",R.drawable.number_eight));
+        word.add(new Word("Noy","nine",R.drawable.number_nine));
+        word.add(new Word("Dos","ten",R.drawable.number_ten));
         //Recycling
         //ArrayAdapter<Word> itemsAdapter=new ArrayAdapter<Word>(this,R.layout.list_item,word);
         WordAdapter wordAdapter=new WordAdapter(this,word);
