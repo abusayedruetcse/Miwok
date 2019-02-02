@@ -42,6 +42,9 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // set this text on the number TextView
         numberTextView.setText(currentAndroidFlavor.getDefaultTranslation());
 
+        ImageView imageView=(ImageView)listItemView.findViewById(R.id.imo);
+        imageView.setImageResource(currentAndroidFlavor.getImageId());
+
 
 
 
