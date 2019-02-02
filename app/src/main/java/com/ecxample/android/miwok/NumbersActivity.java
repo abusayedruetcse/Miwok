@@ -31,7 +31,7 @@ public class NumbersActivity extends AppCompatActivity {
         word.add(new Word("Dos","ten"));
         //Recycling
         //ArrayAdapter<Word> itemsAdapter=new ArrayAdapter<Word>(this,R.layout.list_item,word);
-        WordAdapter wordAdapter=new WordAdapter.getView(this,0,word);
+        WordAdapter wordAdapter=new WordAdapter(this,word);
         /**
         //Using GridView
         GridView gridView=(GridView)findViewById(R.id.gridView);
