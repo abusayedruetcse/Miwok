@@ -13,40 +13,61 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/defaultBackground">
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:background="@android:color/holo_orange_light"
+                android:layout_height="@dimen/height"
+                android:background="@color/numbersColor"
                 android:text="Numbers"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSize"
+                android:textAlignment="viewStart"
+                android:paddingLeft="@dimen/space"
                 android:textAllCaps="false"
                 android:id="@+id/numbersButton"
-                android:onClick="numbersButtonClick"/>
+                android:onClick="numbersButtonClick" />
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:background="@android:color/holo_green_light"
+                android:layout_height="@dimen/height"
+                android:background="@color/familyColor"
                 android:text="Family Members"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSize"
+                android:textAlignment="viewStart"
+                android:paddingLeft="@dimen/space"
                 android:textAllCaps="false"
                 android:id="@+id/familyButton"
                 android:onClick="familyButtonClick"/>
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:background="@android:color/holo_purple"
+                android:layout_height="@dimen/height"
+                android:background="@color/colorsColor"
                 android:text="Colors"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSize"
+                android:textAlignment="viewStart"
                 android:textAllCaps="false"
+                android:paddingLeft="@dimen/space"
                 android:id="@+id/colorsButton"
                 android:onClick="colorsButtonClick"/>
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:background="@android:color/holo_blue_bright"
+                android:layout_height="@dimen/height"
+                android:background="@color/phrasesColor"
                 android:text="Phrases"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSize"
+                android:paddingLeft="@dimen/space"
+                android:textAlignment="viewStart"
                 android:textAllCaps="false"
                 android:id="@+id/phrasesButton"
                 android:onClick="phrasesButtonClick"/>

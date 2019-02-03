@@ -7,5 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="AppNumber" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/main</item>
+    </style>
 
 </resources>

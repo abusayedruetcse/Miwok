@@ -8,9 +8,8 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/family"
-        android:paddingTop="16dp"
-        android:paddingLeft="16dp">
+        android:background="@color/familyColor"
+        android:id="@+id/family">
 
     </ListView>
 
