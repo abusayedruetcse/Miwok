@@ -17,7 +17,9 @@
         android:paddingLeft="@dimen/space">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
             android:id="@+id/bangla"
             android:textColor="@color/textColor"
             android:textSize="@dimen/textSize"
@@ -25,7 +27,9 @@
             tools:text="Ekk"/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="top"
             android:id="@+id/english"
             android:textColor="@color/textColor"
             android:textSize="@dimen/textSize"
