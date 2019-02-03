@@ -22,20 +22,14 @@ public class WordAdapter extends ArrayAdapter<Word> {
     public View getView(int position,View convertView,ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
-        // Get the {@link AndroidFlavor} object located at this position in the list
-        Word currentAndroidFlavor = getItem(position);
-        if(listItemView == null&& !currentAndroidFlavor.getIsPhrases()) {
+
+        if(listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
         }
-        if(listItemView == null&& currentAndroidFlavor.getIsPhrases())
-        {
-            listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.list_phrases, parent, false);
-        }
 
-
-
+        // Get the {@link AndroidFlavor} object located at this position in the list
+        Word currentAndroidFlavor = getItem(position);
         // Find the TextView in the list_item.xml layout with the ID version_name
 
         TextView nameTextView = (TextView) listItemView.findViewById(R.id.bangla);
@@ -49,10 +43,15 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // set this text on the number TextView
         numberTextView.setText(currentAndroidFlavor.getDefaultTranslation());
 
-        if(!currentAndroidFlavor.getIsPhrases())
+        ImageView imageView=(ImageView)listItemView.findViewById(R.id.imo);
+        if(currentAndroidFlavor.hasImage())
         {
-            ImageView imageView=(ImageView)listItemView.findViewById(R.id.imo);
             imageView.setImageResource(currentAndroidFlavor.getImageId());
+            imageView.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            imageView.setVisibility(View.GONE);
         }
 
 
