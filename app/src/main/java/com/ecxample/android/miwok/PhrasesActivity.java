@@ -18,7 +18,7 @@ public class PhrasesActivity extends AppCompatActivity {
         phrases.add(new Word("Country","Bangladesh"));
         phrases.add(new Word("Favourite Fruit","Mango"));
 
-        WordAdapter wordAdapter=new WordAdapter(this,phrases);
+        WordAdapter wordAdapter=new WordAdapter(this,phrases,R.color.phrasesColor);
         ListView listView=(ListView)findViewById(R.id.phrases);
         listView.setAdapter(wordAdapter);
 
