@@ -6,20 +6,29 @@ public class Word {
     private int imageId=NO_IMAGE_PROVIDED;
     //private boolean isPhrases;
     private static final int NO_IMAGE_PROVIDED = -1;
-    public Word(String s1,String s2,int id)
+    private int audioId;
+    public Word(String s1,String s2,int id,int audio)
     {
         bangla=s1;
         english=s2;
         imageId=id;
+        audioId=audio;
        // isPhrases=false;
     }
+    public Word(String s1,String s2,int audio)
+    {
+        bangla=s1;
+        english=s2;
+        audioId=audio;
+    }
+    /*
     public Word(String s1,String s2)
     {
         bangla=s1;
         english=s2;
        // isPhrases=true;
     }
-
+    */
 
     public String getDefaultTranslation()
     {
@@ -37,6 +46,10 @@ public class Word {
     public boolean hasImage()
     {
         return imageId!=NO_IMAGE_PROVIDED;
+    }
+    public int getAudioId()
+    {
+        return audioId;
     }
 
 }
