@@ -34,11 +34,27 @@ public class ColorsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                releaseMediaPlayer();
                 Word color=colors.get(position);
                 mediaPlayer=MediaPlayer.create(ColorsActivity.this,color.getAudioId());
                 mediaPlayer.start();
 
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        releaseMediaPlayer();
+                    }
+                });
+
             }
         });
+    }
+    public void releaseMediaPlayer()
+    {
+        if(mediaPlayer!=null)
+        {
+            mediaPlayer.release();
+            mediaPlayer=null;
+        }
     }
 }

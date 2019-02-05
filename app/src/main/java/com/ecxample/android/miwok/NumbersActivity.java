@@ -51,14 +51,20 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                releaseMediaPlayer();
                 Word words=word.get(position);
                 mediaPlayer=MediaPlayer.create(NumbersActivity.this,words.getAudioId());
                 mediaPlayer.start();
 
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        releaseMediaPlayer();
+                    }
+                });
+
             }
         });
-
-
 
         /**
          * //Using LinearLayout
@@ -73,7 +79,13 @@ public class NumbersActivity extends AppCompatActivity {
             count++;
         }
          */
-
-
+    }
+    public void releaseMediaPlayer()
+    {
+        if(mediaPlayer!=null)
+        {
+            mediaPlayer.release();
+            mediaPlayer=null;
+        }
     }
 }

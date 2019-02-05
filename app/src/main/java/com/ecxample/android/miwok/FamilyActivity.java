@@ -39,16 +39,30 @@ public class FamilyActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                releaseMediaPlayer();
                 Word familys=family.get(position);
                 mediaPlayer=MediaPlayer.create(FamilyActivity.this,familys.getAudioId());
                 mediaPlayer.start();
+
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        releaseMediaPlayer();
+                    }
+                });
 
             }
         });
 
 
 
-
-
+    }
+    public void releaseMediaPlayer()
+    {
+        if(mediaPlayer!=null)
+        {
+            mediaPlayer.release();
+            mediaPlayer=null;
+        }
     }
 }

@@ -3,6 +3,7 @@ package com.ecxample.android.miwok;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -30,12 +31,27 @@ public class PhrasesActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                releaseMediaPlayer();
                 Word phrase=phrases.get(position);
                 mediaPlayer=MediaPlayer.create(PhrasesActivity.this,phrase.getAudioId());
                 mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        releaseMediaPlayer();
+                    }
+                });
 
             }
         });
 
+    }
+    public void releaseMediaPlayer()
+    {
+        if(mediaPlayer!=null)
+        {
+            mediaPlayer.release();
+            mediaPlayer=null;
+        }
     }
 }
